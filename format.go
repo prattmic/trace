@@ -5,7 +5,7 @@
 package trace
 
 type ViewerData struct {
-	Events   []*ViewerEvent         `json:"traceEvents"`
+	Events []*ViewerEvent `json:"traceEvents"`
 }
 
 type ViewerEvent struct {

@@ -11,11 +11,11 @@ func InstantEvent() {
 	}
 
 	ctx.buf <- ViewerEvent{
-		Name: "instant event",
-		Phase: "n",
+		Name:       "instant event",
+		Phase:      "n",
 		Categories: "instant",
-		ID: 1,
-		Time: float64(time.Since(ctx.start).Nanoseconds() / 1000),
+		ID:         1,
+		Time:       float64(time.Since(ctx.start).Nanoseconds() / 1000),
 	}
 }
 
@@ -25,32 +25,32 @@ type Event struct {
 
 func NewEvent() Event {
 	ctx.buf <- ViewerEvent{
-		Name: "event",
-		Phase: "b",
+		Name:       "event",
+		Phase:      "b",
 		Categories: "duration",
-		ID: 2,
-		Time: float64(time.Since(ctx.start).Nanoseconds() / 1000),
+		ID:         2,
+		Time:       float64(time.Since(ctx.start).Nanoseconds() / 1000),
 	}
 	return Event{id: 2}
 }
 
 func (e Event) End() {
 	ctx.buf <- ViewerEvent{
-		Name: "event",
-		Phase: "e",
+		Name:       "event",
+		Phase:      "e",
 		Categories: "duration",
-		ID: e.id,
-		Time: float64(time.Since(ctx.start).Nanoseconds() / 1000),
+		ID:         e.id,
+		Time:       float64(time.Since(ctx.start).Nanoseconds() / 1000),
 	}
 }
 
 func (e Event) SubEvent() Event {
 	ctx.buf <- ViewerEvent{
-		Name: "event",
-		Phase: "b",
+		Name:       "event",
+		Phase:      "b",
 		Categories: "duration",
-		ID: e.id,
-		Time: float64(time.Since(ctx.start).Nanoseconds() / 1000),
+		ID:         e.id,
+		Time:       float64(time.Since(ctx.start).Nanoseconds() / 1000),
 	}
 	return e
 }
