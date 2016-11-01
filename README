@@ -1,4 +1,4 @@
-Use the Chrome Trace Event Format [1], for compatibility with their viewer [2].
+Uses the Chrome Trace Event Format [1], for compatibility with their viewer [2].
 
 [1]: https://docs.google.com/document/d/1CvAClvFfyA5R-PhYUmn5OOQtYMH4h6I0nSsKchNAySU/edit
 [2]: https://github.com/catapult-project/catapult/tree/master/tracing
